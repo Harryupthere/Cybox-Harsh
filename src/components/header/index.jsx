@@ -7,30 +7,7 @@ import "./styles.scss";
 import logo from "../../assets/images/logo/logo.png";
 import Button from "../button";
 
-
-import { useAccount, useDisconnect } from 'wagmi'
-
-import { useWeb3Modal } from '@web3modal/react'
-
-
-
-
-
 const Header = () => {
-
-
-
-
-
-
-
-
-const { isConnected,address } = useAccount()
-
-const { isOpen, open, close, setDefaultChain } = useWeb3Modal()
-
-
-
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -58,9 +35,6 @@ const { isOpen, open, close, setDefaultChain } = useWeb3Modal()
   };
 
   return (
-    <>
-
-
     <header
       id="header_main"
       className={`header ${scroll ? "is-fixed" : ""} ${
@@ -114,16 +88,8 @@ const { isOpen, open, close, setDefaultChain } = useWeb3Modal()
           {/* <Button title="Connect Wallet" path="/" /> */}
           <button to="#" className="tf-button btn-effect">
             <span className="boder-fade"></span>
-           
-            <span className="effect" onClick={() => open()} >{isConnected ? `${address.substring(
-              0,
-              4
-            )}....${address.substring(
-              address.length - 4,
-              address.length
-            )}` : "Connect"}</span>
-
-</button>
+            <span className="effect">Connect</span>
+          </button>
 
           {/* <Button
             style={{
@@ -142,8 +108,6 @@ const { isOpen, open, close, setDefaultChain } = useWeb3Modal()
         </div>
       </div>
     </header>
-  
-    </>
   );
 };
 

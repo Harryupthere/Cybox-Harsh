@@ -8,35 +8,6 @@ import '../src/assets/font/font-awesome.css'
 import routes from './pages';
 import Page404 from './pages/404';
 
-import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
-import { Web3Modal } from '@web3modal/react'
-import { configureChains, createConfig, WagmiConfig } from 'wagmi'
-import {  mainnet, sepolia } from 'wagmi/chains'
-
-const chains = [ mainnet, sepolia]
-const projectId = '6b098530af4797b4b0dcb37e0534845a'
-
-const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
-const wagmiConfig = createConfig({
-  autoConnect: true,
-  connectors: w3mConnectors({ projectId, chains }),
-  publicClient
-})
-const ethereumClient = new EthereumClient(wagmiConfig, chains)
-
-// function App() {
-//   return (
-//     <>
-//       <WagmiConfig config={wagmiConfig}>
-//         <HomePage />
-//       </WagmiConfig>
-
-//       <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
-//     </>
-//   )
-// }
-
-
 function App() {
 
     useEffect(() => {
@@ -47,7 +18,6 @@ function App() {
 
     return (
         <>
-        <WagmiConfig config={wagmiConfig}>
 
             <Header />
 
@@ -63,8 +33,6 @@ function App() {
             </Routes>
 
             <Footer />
-            </WagmiConfig>
-            <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
         </>
     );
 }

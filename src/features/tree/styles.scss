@@ -12,7 +12,6 @@
 .tree-node {
   display: flex;
   flex-direction: column;
-  align-self:center;
   align-items: center;
   margin-bottom: 16px;
   position: relative;
@@ -20,17 +19,7 @@
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
 }
-.tree-nodem {
-  display: flex;
-  flex-direction: column;
-  align-self:center;
-  align-items: center;
-  margin-bottom: 16px;
-  position: relative;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-}
+
 .node-label {
   background-color: #0e2230;
   padding: 15px 30px;
